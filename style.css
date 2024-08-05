@@ -6,16 +6,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+div p{
+    margin-top: 0px;
+    padding-top: 15px;
+    background-color: rgba(11, 80, 3, 0.945);
+    max-width: 100%;
+    color: rgba(237, 239, 237, 0.945);
+    margin: 0 auto;
+    font-size: 25px;
+    text-align: center;
+}
 nav{
-    width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0.6);
-    padding: 25px 35px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 35px;
     font-family: "poppins",sans-serif;
     backdrop-filter: blur(8px);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgb(27, 26, 26);
 }
 header{
     height: 100vh;
@@ -25,32 +35,176 @@ header{
     position: fixed;
     top: 0;
 }
-ul{
-    list-style: none;
+nav ul{
+     float: right;
+     margin-right: 20px;
 }
-li{
+nav ul li{
     display: inline-block;
+    line-height: 80px;
+    margin: 0 2px;
 }
 li a{
     margin: 40px;
 }
 nav a{
-    color: #ffffff;
-    letter-spacing: 1px;
+    color: #2d2b2b;
+    letter-spacing: 0.5px;
     text-decoration: none;
 }
-.fa-magnifying-glass{
+nav ul li a{
+    color: black;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.fa-bars{
     font-size: 25px;
     align-items: center;
 }
-.fa-magnifying-glass:hover {
-    background-color: rgb(0,0,0,0.6);
-  }
-.logo{
-    padding-top: .9000rem;
-    padding-bottom: .9000rem;
-    align-items: center;
-    padding: 10px 0px;
-    text-align: center;
-
+.fa-bars:active{
+    background-color: rgba(151, 13, 13, 0.6);
+    font-size: 150%;
 }
+h1{
+    align-items: center;
+    padding: 100px 0px;
+    text-align: center;
+    font-size: 60px;
+}
+button{
+    padding: 9px 25px;
+    background-color: #1d5b04;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transform: all 0.3s ease 0s;
+    font-size: 20px;
+    padding: 15px 32px;
+    box-shadow: 0 10px 30px rgb(198, 198, 198);
+ 
+}
+button:hover {
+       background-color: rgba(42, 44, 42, 0.300);
+}
+
+/*======================google font==========================*/
+
+
+
+/*===========================variable css====================*/
+:root{
+      /*===================colors====*/
+      --first-color: hsl(82, 60%, 28%);
+      --title-color: hsl(0, 0%, 15%);
+      --text-color: hsl(0, 0%, 35%);
+      --body-color: hsl(0, 0%, 95%);
+      --container-color: hsl(0, 0%, 100%);
+
+      /*======Font and typography====*/
+      /*.5rem = 8px / 1rem = 16px ...*/
+      --body-font: "poppins", sans-serif;
+      --h2-font-size: 1.25;
+      --small-font-size: 813rem;
+}
+/*===============Responsive typography====*/
+@media screen and (min-width: 1120px) {
+    :root{
+        --h2-font-size: 1.5rem;
+        --small-font-size: .875rem;
+    }
+    
+}
+
+/*===================== Base=======*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    background-color: var(--body-font);
+    color: var(--text-color);
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*====================base card====*/
+.container {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card__container{
+    display: grid;
+    row-gap: 6rem;
+}
+
+.card__artical{
+    position: relative;
+    overflow: hidden;
+}
+
+.card__img{
+    width: 328px;
+    border-radius:  1.5rem;
+}
+
+.card__data {
+    width: 280px;
+    background-color: var(--container-color); 
+    padding: 1.5rem 2rem; 
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15); 
+    border-radius: 1rem;
+    position: absolute; 
+    left: 0;
+    right: 0; 
+    margin-inline: auto; 
+}
+.card__description{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+}
+.card__title{
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+    color: var(--title-color);
+    margin-bottom: .75rem;
+}
+.card__button{
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    color: var(--first-color);
+}
+.card__button:hover{
+    text-decoration: underline;
+}
+@media screen and (max_width: 340px){
+    .container{
+        margin-inline:  1rem;
+
+    }
+
+    .card__data{
+        width: 250px
+        padding: 1rem;
+    }
+}
+@media screen and (min-width: 768px){
+    .card__container{
+        grid-temlate-column: repeat(3, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+
+
